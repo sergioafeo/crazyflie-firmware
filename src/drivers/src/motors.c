@@ -65,12 +65,12 @@ static bool isInit = false;
 
 static uint16_t motorsBLConvBitsTo16(uint16_t bits)
 {
-  return (0xFFFF * (bits - MOTORS_BL_PWM_CNT_FOR_HIGH) / MOTORS_BL_PWM_CNT_FOR_HIGH);
+  return (0xFFFF * (bits - MOTORS_BL_PWM_CNT_FOR_LOW) / MOTORS_BL_PWM_CNT_MAX);
 }
 
 static uint16_t motorsBLConv16ToBits(uint16_t bits)
 {
-  return (MOTORS_BL_PWM_CNT_FOR_HIGH + ((bits * MOTORS_BL_PWM_CNT_FOR_HIGH) / 0xFFFF));
+  return (MOTORS_BL_PWM_CNT_FOR_LOW + ((bits * MOTORS_BL_PWM_CNT_MAX) / 0xFFFF));
 }
 
 static uint16_t motorsConvBitsTo16(uint16_t bits)
