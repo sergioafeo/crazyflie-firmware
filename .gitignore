@@ -17,3 +17,5 @@ tags
 *.gch
 
 /generated-test/**
+.swp
+compile_commands.json
